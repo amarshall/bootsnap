@@ -10,6 +10,8 @@ module Bootsnap
       SetOutsideTransactionNotAllowed = Class.new(StandardError)
 
       def initialize(store_path)
+        @dirty = false
+        @in_txn = false
         @store_path = store_path
         load_data
       end

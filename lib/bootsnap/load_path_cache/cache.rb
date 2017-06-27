@@ -11,6 +11,7 @@ module Bootsnap
         @store = store
         @mutex = defined?(::Mutex) ? ::Mutex.new : ::Thread::Mutex.new # TODO: Remove once Ruby 2.2 support is dropped.
         @path_obj = path_obj
+        @has_relative_paths = false
         reinitialize
       end
 
